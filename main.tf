@@ -4,10 +4,7 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 3.48.0"
     }
-    random = {
-      source  = "hashicorp/random"
-      version = "~> 3.1.0"
-    }
+
     archive = {
       source  = "hashicorp/archive"
       version = "~> 2.2.0"
@@ -25,12 +22,6 @@ terraform {
     workspaces {
       name = "web-app"
     }
-  }
-}
-
-resource "null_resource" "example" {
-  triggers = {
-    value = "A example resource that does nothing!"
   }
 }
 
