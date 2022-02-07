@@ -62,7 +62,7 @@ resource "aws_lambda_function" "web_app" {
   s3_bucket = aws_s3_bucket.lambda_bucket.id
   s3_key    = aws_s3_bucket_object.lambda_web_app.key
 
-  runtime = "python3.6"
+  runtime = "nodejs12.x"
   handler = "app.handler"
 
   source_code_hash = data.archive_file.lambda_web_app.output_base64sha256
