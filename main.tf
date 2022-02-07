@@ -17,7 +17,7 @@ terraform {
   required_version = "~> 1.0"
 }
 
-/*
+
 terraform {
   cloud {
     organization = "kuber24"
@@ -27,7 +27,7 @@ terraform {
     }
   }
 }
-*/
+
 
 provider "aws" {
   region = var.aws_region
