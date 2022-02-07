@@ -17,6 +17,18 @@ terraform {
   required_version = "~> 1.0"
 }
 
+/*
+terraform {
+  cloud {
+    organization = "kuber24"
+
+    workspaces {
+      name = "web-app"
+    }
+  }
+}
+*/
+
 provider "aws" {
   region = var.aws_region
 }
