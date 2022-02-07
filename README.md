@@ -5,7 +5,17 @@
      - https://www.terraform.io/docs/cloud/users-teams-organizations/api-tokens.html
      - https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
 
-Provide Terraform organisation and workspace variable in variables.tf
+##Provide Terraform organisation and workspace in main.tf like below, replace the values for running it with a different terraform account.
+
+terraform {
+  cloud { 
+    organization = "kuber24"
+
+    workspaces {
+      name = "web-app"
+    }
+  }
+}
 
 ## Login to the terraform cloud and go to the organisation > workspace > variables and create below two workspace environment variables with proper values
 
