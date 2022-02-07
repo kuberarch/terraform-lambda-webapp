@@ -17,10 +17,10 @@ terraform {
 
 terraform {
   cloud {
-    organization = var.terraform_cloud_org
+    organization = "${var.terraform_cloud_org}"
 
     workspaces {
-      name = var.terraform_cloud_workspace
+      name = "${var.terraform_cloud_workspace}"
     }
   }
 }
