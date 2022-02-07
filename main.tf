@@ -17,10 +17,10 @@ terraform {
 
 terraform {
   cloud {
-    organization = "kuber24"
+    organization = var.terraform_cloud_org
 
     workspaces {
-      name = "web-app"
+      name = var.terraform_cloud_workspace
     }
   }
 }
