@@ -36,8 +36,6 @@ resource "aws_s3_bucket" "lambda_bucket" {
   force_destroy = true
 }
 
-//second 
-
 data "archive_file" "lambda_web_app" {
   type = "zip"
 
@@ -53,8 +51,6 @@ resource "aws_s3_bucket_object" "lambda_web_app" {
 
   etag = filemd5(data.archive_file.lambda_web_app.output_path)
 }
-
-//third
 
 resource "aws_lambda_function" "web_app" {
   function_name = "web_app"
@@ -91,8 +87,6 @@ resource "aws_iam_role_policy_attachment" "lambda_policy" {
   role       = aws_iam_role.lambda_exec.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
-
-//four and api starts here
 
 resource "aws_apigatewayv2_api" "lambda" {
   name          = "serverless_lambda_gw"
